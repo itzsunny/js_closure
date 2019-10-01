@@ -18,9 +18,9 @@ var counter = (function() {
   };
 })();
 
-counter.value();
-counter.increment();
-counter.increment();
-counter.value();
-counter.decrement();
-counter.value();
+counter.value(); // will return privateCounter with value 0;
+counter.increment(); // no return but privateCounter will increase by 1;
+counter.increment(); // no return again but the value privateCounter will increase by 1 again and value will be 2;
+counter.value(); // will return  privateCounter with value 2;
+counter.decrement(); // no return but  privateCounter will decrease by 1;
+counter.value(); // will return privateCounter with value 1;
