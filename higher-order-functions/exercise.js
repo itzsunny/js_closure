@@ -17,22 +17,40 @@ console.log(addS('pizza'));
 console.log(addS('bagel'));
 
 // Challenge 3
-function map(array, multiplyByTwo) {
+function map(array, callback) {
+let mappedArr = [];
 
-	function multiplyByTwo(int) {
-		var addTwo = array.map( item => {
-		 return item * int;
-	});
-	}
-	return addTwo;
+    for(let i of array) {
+        mappedArr.push(callback(i));
+    }
+    return mappedArr;
+}
+var addTwo = function (i) {
+	return i+2;
+}
+var multiplyByTwo = function (i) {
+	return i*2;
 }
 
-var result = map([1, 2, 3],multiplyByTwo(2));
-// console.log(map([1, 2, 3],multiplyByTwo));
+console.log(map([1, 2, 3],addTwo));
+console.log(map([1, 2, 3],multiplyByTwo));
+
 
 
 // Challenge 4
-function forEach(array, callback) {}
+function forEach(array, callback) {
+
+	   for(let i of array) {
+        callback(i);
+    }
+}
+var alphabet = '';
+var letters = ['a', 'b', 'c', 'd'];
+var char = function () {
+	 return alphabet += char;
+}
+forEach(letters,char);
+console.log(alphabet); 
 
 // see for yourself if your forEach works!
 
